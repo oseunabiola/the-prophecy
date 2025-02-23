@@ -1,13 +1,15 @@
+import { Benefit } from "../components/home/benefit";
 import { Hero } from "../components/home/hero";
-import { Nav } from "../components/home/nav";
+import { Header } from "../components/home/nav";
 
 const Home = () => {
-  return (
-    <>
-      <Nav />
-      <Hero />
-    </>
-  );
+    return (
+        <>
+            <Header />
+            <Hero />
+            <Benefit />
+        </>
+    );
 };
 
 export { Home };

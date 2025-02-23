@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { PageContainer } from "../shared/page-container";
 import { LinkButton } from "../ui/link-button";
 
-const Nav = () => {
+const Header = () => {
     return (
         <header className="mt-14">
             <PageContainer>
@@ -37,4 +37,4 @@ const Nav = () => {
     );
 };
 
-export { Nav };
+export { Header };
