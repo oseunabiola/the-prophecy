@@ -1,0 +1,7 @@
+---
+deployment:
+   tasks:
+      - export DEPLOYMENTPATH=/home/theharv2/public_html/theprophetic/
+      - /bin/rm -rf $DEPLOYMENTPATH
+      - /bin/cp -R * $DEPLOYMENTPATH
+
