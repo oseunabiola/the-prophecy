@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { PageContainer } from "../shared/page-container";
 import { LinkButton } from "../ui/link-button";
+import { PageContainer } from "./page-container";
 
 const Header = () => {
     return (

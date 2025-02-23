@@ -6,7 +6,7 @@ type LinkButtonProps = {
     isExternal?: boolean;
     to: string;
     className?: string;
-    variant?: "primary" | "outline-primary";
+    variant?: "primary" | "outline-primary" | "accent";
 };
 
 const LinkButton = ({ children, isExternal = false, to, className = "", variant }: LinkButtonProps) => {
@@ -16,10 +16,14 @@ const LinkButton = ({ children, isExternal = false, to, className = "", variant 
 
     switch (variant) {
         case "primary":
-            internalClassNames = "bg-radial-[50%_50%_at_50%_50%] from-[#010836] to-[#01020F]  text-alt";
+            internalClassNames = "bg-radial-[50%_50%_at_50%_50%] from-[#010836] to-[#01020F] text-alt";
             break;
         case "outline-primary":
             internalClassNames = "border-[1px]";
+            break;
+        case "accent":
+            internalClassNames = "bg-accent";
+
             break;
 
         default:
