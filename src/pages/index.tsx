@@ -9,7 +9,7 @@ import { Header } from "../components/shared/nav";
 
 const Home = () => {
     return (
-        <>
+        <div className="grid-rows-[auto_1fr_auto] pt-14">
             <Header />
             <main>
                 <Hero />
@@ -18,9 +18,9 @@ const Home = () => {
                 <Discover />
                 <TheAuthor />
                 <CommunityInvitation />
-                <Footer />
             </main>
-        </>
+            <Footer />
+        </div>
     );
 };
 

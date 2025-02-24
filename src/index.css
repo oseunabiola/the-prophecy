@@ -21,13 +21,6 @@
     --shadow-400: 4px 2px 6px 2px #01093a0d;
 }
 
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role="list"],
 ol[role="list"] {
@@ -41,7 +34,7 @@ html:focus-within {
 
 html,
 body {
-    height: 100%;
+    min-height: 100vh;
 }
 /* Set core body defaults */
 body {
@@ -49,19 +42,12 @@ body {
     line-height: 1.5;
     font-size: 1em;
     font-family: var(--font-recoleta);
+    background-color: var(--color-body-bg);
 }
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
     text-decoration-skip-ink: auto;
-}
-
-/* Make images easier to work with */
-img,
-picture,
-svg {
-    max-width: 100%;
-    display: block;
 }
 
 /* Inherit fonts for inputs and buttons */

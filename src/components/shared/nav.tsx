@@ -4,7 +4,7 @@ import { PageContainer } from "./page-container";
 
 const Header = () => {
     return (
-        <header className="mt-14">
+        <header>
             <PageContainer>
                 <div className="flex items-center justify-between bg-primary px-5 py-8 shadow-400">
                     <Link to="/" className="text-xl font-semibold">
