@@ -1,10 +1,12 @@
-import { About } from "../components/home/about";
 import { Benefit } from "../components/home/benefit";
 import { CommunityInvitation } from "../components/home/community-invitation";
+import { CTA } from "../components/home/cta";
 import { Discover } from "../components/home/Discover";
 import { Hero } from "../components/home/hero";
-import TheAuthor from "../components/home/the-author";
-import Footer from "../components/shared/footer";
+import { TheAuthor } from "../components/home/the-author";
+import { TheBook } from "../components/home/the-book";
+import { WaitList } from "../components/home/wait-list";
+import { Footer } from "../components/shared/footer";
 import { Header } from "../components/shared/nav";
 
 const Home = () => {
@@ -14,9 +16,11 @@ const Home = () => {
             <main>
                 <Hero />
                 <Benefit />
-                <About />
+                <TheBook />
                 <Discover />
                 <TheAuthor />
+                <CTA />
+                <WaitList />
                 <CommunityInvitation />
             </main>
             <Footer />

@@ -8,7 +8,7 @@ const Discover = () => {
             <PageContainer>
                 <div className="grid grid-cols-12 justify-between">
                     <div className="col-span-5 mx-auto w-11/12">
-                        <h2 className="mb-6 text-5xl leading-[70px]">What You'll Discover in This Book :</h2>
+                        <h2 className="mb-6 font-glastone text-5xl leading-[70px]">What You'll Discover in This Book :</h2>
                         <LinkButton to="/" variant="primary" className="px-8 py-3.5">
                             Order Now
                         </LinkButton>

@@ -2,7 +2,7 @@ import AboutIllustration from "../../assets/illustrations/landing-about-illustra
 import { PageContainer } from "../shared/page-container";
 import { LinkButton } from "../ui/link-button";
 
-const About = () => {
+const TheBook = () => {
     return (
         <PageContainer>
             <div className="grid grid-cols-12 py-[121px]">
@@ -33,4 +33,4 @@ const About = () => {
     );
 };
 
-export { About };
+export { TheBook };
