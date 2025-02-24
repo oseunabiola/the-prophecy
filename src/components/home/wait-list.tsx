@@ -1,3 +1,7 @@
+import { ReactNode } from "react";
+import DreamImage from "../../assets/images/dream-track.jpeg";
+import seekerImage from "../../assets/images/seekers.png";
+import PropheticOfficeImage from "../../assets/images/prophetic-office.jpeg";
 import { PageContainer } from "../shared/page-container";
 import { LinkButton } from "../ui/link-button";
 
@@ -18,7 +22,7 @@ const WaitList = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="card-container">
+                    <div className="card-container | grid grid-cols-3 gap-x-6">
                         {WAIT_LIST_TRACKS.map((_track, index) => (
                             <WaitListCard key={index} track={_track} />
                         ))}
@@ -40,16 +44,64 @@ const WaitList = () => {
 
 export { WaitList };
 
-const WAIT_LIST_TRACKS = [{ name: "The Prophetic Seeker Track" }];
+const WAIT_LIST_TRACKS = [
+    {
+        name: "The Prophetic Seeker Track",
+        description: (
+            <div className="grid gap-y-5">
+                <p>For those who desire to hear God clearly and develop confidence in divine communication.</p>
+                <p>Learn how to tune in to God's voice, recognize His leadings, and cultivate a prophetic lifestyle.</p>
+            </div>
+        ),
+        decorColour: "#F7F4E8",
+        image: seekerImage,
+    },
+    {
+        name: "The Dream and Interpretation Track",
+        description: (
+            <div className="grid gap-y-5">
+                <p>For those who want to understand dreams and their interpretations with biblical accuracy.</p>
+                <p>Discover how God speaks through dreams, symbols, and visions and how to decode divine messages.</p>
+            </div>
+        ),
+        decorColour: "#F4C006",
+        image: DreamImage,
+    },
+    {
+        name: "The Prophetic Office Track",
+        description: (
+            <div className="grid gap-y-5">
+                <p>For those who feel called to the office of the prophet and want to sharpen their prophetic mantle.</p>
+                <p>Receive mentorship on prophetic authority, deeper realms of revelation, and ministering as a prophet.</p>
+            </div>
+        ),
+        decorColour: "#F7F4E8",
+        image: PropheticOfficeImage,
+    },
+];
 
 type TrackProp = {
     name: string;
+    description: ReactNode;
+    decorColour: string;
+    image: string;
 };
 
 const WaitListCard = ({ track }: { track: TrackProp }) => {
+    const { decorColour, name, description } = track;
+
     return (
-        <div className="card | border- rounded-sm border-accent-2" style={{ "--x-spacing": "36px" } as React.CSSProperties}>
-            {track.name}
+        <div className="card | overflow-hidden rounded-sm border border-accent-3">
+            <div className="track-img | relative max-h-60 overflow-hidden">
+                <img src={track.image} className="scaleX-[-1]" />
+                <div className="backdrop | absolute inset-0 bg-linear-180 from-transparent to-[#000]">
+                    <p className="absolute bottom-6 px-9 text-[28px]">{name}</p>
+                </div>
+            </div>
+            <div className="card__body | grid gap-y-11 px-9 py-7 font-glastone text-xl text-white">
+                {description}
+                <div className="h-3.5 w-full" style={{ backgroundColor: decorColour }}></div>
+            </div>
         </div>
     );
 };
