@@ -47,5 +47,9 @@ type TrackProp = {
 };
 
 const WaitListCard = ({ track }: { track: TrackProp }) => {
-    return <div className="card | border- rounded-sm border-accent-2" style={{ "--x-spacing": "36px" } as React.CSSProperties}></div>;
+    return (
+        <div className="card | border- rounded-sm border-accent-2" style={{ "--x-spacing": "36px" } as React.CSSProperties}>
+            {track.name}
+        </div>
+    );
 };
