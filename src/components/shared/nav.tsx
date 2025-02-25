@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <header>
             <PageContainer>
-                <div className="flex items-center justify-between bg-primary px-5 py-8 shadow-400">
+                <div className="flex items-center justify-between bg-primary px-4 py-6 shadow-400 xl:px-5 xl:py-8">
                     <Link to="/" className="text-xl font-semibold">
                         That all may Prophesy
                     </Link>

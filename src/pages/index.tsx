@@ -11,7 +11,7 @@ import { Header } from "../components/shared/nav";
 
 const Home = () => {
     return (
-        <div className="grid-rows-[auto_1fr_auto] pt-14">
+        <div className="grid-rows-[auto_1fr_auto] pt-7 xl:pt-14">
             <Header />
             <main>
                 <Hero />
