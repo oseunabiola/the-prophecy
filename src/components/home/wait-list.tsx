@@ -50,7 +50,7 @@ const WAIT_LIST_TRACKS = [
         description: (
             <div className="grid gap-y-5">
                 <p>For those who desire to hear God clearly and develop confidence in divine communication.</p>
-                <p>Learn how to tune in to God's voice, recognize His leadings, and cultivate a prophetic lifestyle.</p>
+                <p>Learn how to tune in to God's voice, recognize His xl:leadings, and cultivate a prophetic lifestyle.</p>
             </div>
         ),
         decorColour: "#F7F4E8",

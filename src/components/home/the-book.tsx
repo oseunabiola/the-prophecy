@@ -6,12 +6,12 @@ const TheBook = () => {
     return (
         <div id="the-book" className="py-32 xl:py-[121px]">
             <PageContainer>
-                <div className="grid xl:grid-cols-12">
-                    <div className="illustration | col-span-6 xl:me-[71px]">
+                <div className="grid gap-y-8 xl:grid-cols-12">
+                    <div className="illustration | mx-auto w-9/12 xl:col-span-6 xl:mx-0 xl:me-[71px]">
                         <img src={AboutIllustration} alt="That all may Prophecy front cover" />
                     </div>
-                    <div className="about | col-span-6 text-[18px]">
-                        <h2 className="mb-6 text-center text-[40px] leading-[78px] xl:text-left">About the Book</h2>
+                    <div className="about | text-[18px] xl:col-span-6">
+                        <h2 className="mb-4 text-center font-glastone text-[40px] xl:mb-6 xl:text-left xl:xl:leading-[78px]">About the Book</h2>
                         <div className="grid gap-y-6 text-justify">
                             <p>
                                 Prophecy is for everyone, not just a select few! In That All May Prophesy, Prophet Gbenga Shafe reveals that every
