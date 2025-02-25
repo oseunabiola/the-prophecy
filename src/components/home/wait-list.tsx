@@ -9,8 +9,8 @@ const WaitList = () => {
     return (
         <div id="enrol" className="bg-radial-[50%_50%_at_50%_50%] from-[#010836] to-[#01020F] py-[102px] text-alt-2">
             <PageContainer>
-                <div className="grid gap-y-[88px]">
-                    <div className="mx-auto grid w-11/12 gap-y-8 text-center text-[28px]">
+                <div className="grid gap-y-[70px] xl:gap-y-[88px]">
+                    <div className="mx-auto grid w-11/12 gap-y-8 text-center text-2xl xl:text-[28px]">
                         <h2 className="font-glastone text-[40px]">
                             Join the Waitlist for my <span className="italic">Prophetic Training and Mentorship Program</span>
                         </h2>
@@ -27,7 +27,7 @@ const WaitList = () => {
                             <WaitListCard key={index} track={_track} />
                         ))}
                     </div>
-                    <p className="mx-auto text-center text-[28px] xl:w-[60ch]">
+                    <p className="mx-auto text-center text-2xl xl:w-[60ch] xl:text-[28px]">
                         Choose your track and step into a new realm of prophetic clarity and confidence! Sign up now and take your prophetic journey
                         to the next level!
                     </p>
@@ -95,10 +95,10 @@ const WaitListCard = ({ track }: { track: TrackProp }) => {
             <div className="track-img | relative max-h-60 overflow-hidden">
                 <img src={track.image} className="scaleX-[-1]" />
                 <div className="backdrop | absolute inset-0 bg-linear-180 from-transparent to-[#000]">
-                    <p className="absolute bottom-6 px-9 text-[28px]">{name}</p>
+                    <p className="absolute bottom-6 px-6 text-[28px] xl:px-9">{name}</p>
                 </div>
             </div>
-            <div className="card__body | grid gap-y-11 px-9 py-7 font-glastone text-xl text-white">
+            <div className="card__body | grid gap-y-11 px-6 py-5 font-glastone text-xl text-white xl:px-9 xl:py-7">
                 {description}
                 <div className="h-3.5 w-full" style={{ backgroundColor: decorColour }}></div>
             </div>

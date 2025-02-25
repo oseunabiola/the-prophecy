@@ -7,7 +7,7 @@ const TheAuthor = () => {
             <PageContainer>
                 <div className="grid items-center gap-y-8 py-32 xl:grid-cols-12 xl:py-36">
                     <div className="order-1 text-justify text-xl xl:order-0 xl:col-span-7 xl:w-[97%] xl:pe-8">
-                        <h2 className="mb-10 text-center font-glastone text-[40px] xl:text-left xl:text-[56px] xl:leading-[70px]">
+                        <h2 className="mb-4 text-center font-glastone text-[40px] xl:mb-10 xl:text-left xl:text-[56px] xl:leading-[70px]">
                             About the Author
                         </h2>
                         <div className="grid gap-y-8">

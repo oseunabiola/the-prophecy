@@ -10,7 +10,7 @@ const TheBook = () => {
                     <div className="illustration | mx-auto w-9/12 xl:col-span-6 xl:mx-0 xl:me-[71px]">
                         <img src={AboutIllustration} alt="That all may Prophecy front cover" />
                     </div>
-                    <div className="about | text-[18px] xl:col-span-6">
+                    <div className="about | text-xl xl:col-span-6 xl:text-[18px]">
                         <h2 className="mb-4 text-center font-glastone text-[40px] xl:mb-6 xl:text-left xl:xl:leading-[78px]">About the Book</h2>
                         <div className="grid gap-y-6 text-justify">
                             <p>
