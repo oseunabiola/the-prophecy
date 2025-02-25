@@ -7,7 +7,7 @@ const CommunityInvitation = () => {
         <div className="mx-auto bg-primary py-36">
             <PageContainer>
                 <div className="grid items-start justify-between gap-y-8 lg:grid-cols-12">
-                    <div className="col-span-5 mx-auto grid gap-y-6 text-center lg:w-11/12">
+                    <div className="col-span-5 mx-auto grid gap-y-6 text-center lg:w-11/12 xl:text-left">
                         <h2 className="text-5xl leading-[70px]">Invitation to the Prophetic Company</h2>
                         <p className="w-[27ch] text-xl">Join now and grow in the prophetic with a supportive community!</p>
                         <div className="grid lg:w-max">

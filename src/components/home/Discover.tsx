@@ -8,7 +8,7 @@ const Discover = () => {
             <PageContainer>
                 <div className="grid justify-between lg:grid-cols-12">
                     <div className="col-span-5 mx-auto w-11/12">
-                        <h2 className="mb-6 text-center font-glastone text-5xl leading-[70px]">What You'll Discover in This Book :</h2>
+                        <h2 className="mb-6 text-center font-glastone text-5xl leading-[70px] xl:text-left">What You'll Discover in This Book :</h2>
                         <div className="grid lg:w-fit">
                             <LinkButton to="/" variant="primary" className="px-8 py-3.5">
                                 Order Now

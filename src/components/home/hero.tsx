@@ -5,8 +5,8 @@ import { LinkButton } from "../ui/link-button";
 const Hero = () => {
     return (
         <PageContainer>
-            <div className="flex flex-col py-40">
-                <div className="headline-section | order-1 grid gap-y-8 xl:w-7/12">
+            <div className="grid py-40 xl:grid-cols-12">
+                <div className="headline-section | order-1 grid gap-y-8 xl:order-0 xl:col-span-7">
                     <h1 className="headline | font-glastone leading-[74px] xl:w-[38ch] xl:text-[70px]">
                         Unlock the <span className="italic">Prophetic</span>. Hear God Clearly. Fulfil Your Divine Destiny.
                     </h1>
@@ -22,7 +22,7 @@ const Hero = () => {
                         </LinkButton>
                     </div>
                 </div>
-                <div className="illustration |">
+                <div className="illustration | xl:col-span-5">
                     <img src={heroIllustration} alt="That all may Prophecy book cover" />
                 </div>
             </div>

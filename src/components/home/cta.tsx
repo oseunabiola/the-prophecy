@@ -7,7 +7,7 @@ const CTA = () => {
         <div className="bg-radial-[50%_50%_at_50%_50%] from-[#010836] to-[#01020F] py-[86px] text-alt-2">
             <PageContainer>
                 <div className="mx-auto grid items-start lg:w-11/12 lg:grid-cols-12">
-                    <div className="order-now | order-1 col-span-6 grid gap-y-6 text-center text-lg lg:order-0">
+                    <div className="order-now | order-1 col-span-6 grid gap-y-6 text-center text-lg lg:order-0 xl:text-left">
                         <h2 className="font-glastone text-[40px]">Order Now and Get your Exclusive Copy</h2>
                         <div>
                             <p>

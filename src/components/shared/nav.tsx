@@ -10,7 +10,7 @@ const Header = () => {
                     <Link to="/" className="text-xl font-semibold">
                         That all may Prophesy
                     </Link>
-                    <nav className="hidden">
+                    <nav className="hidden xl:block">
                         <ul className="flex gap-x-6">
                             <li>
                                 <Link to="/">The Book</Link>
@@ -31,7 +31,9 @@ const Header = () => {
                             </div>
                         </ul>
                     </nav>
-                    Button
+                    <button role="menu" className="xl:hidden">
+                        Menu
+                    </button>
                 </div>
             </PageContainer>
         </header>

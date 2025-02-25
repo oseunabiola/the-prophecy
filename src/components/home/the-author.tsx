@@ -5,8 +5,8 @@ const TheAuthor = () => {
     return (
         <PageContainer>
             <div className="grid items-center py-36 lg:grid-cols-12">
-                <div className="order-1 text-justify text-xl lg:col-span-7 lg:w-[97%] lg:pe-8">
-                    <h2 className="mb-10 text-center font-glastone text-[56px] leading-[70px]">About the Author</h2>
+                <div className="order-1 text-justify text-xl lg:col-span-7 lg:w-[97%] lg:pe-8 xl:order-0">
+                    <h2 className="mb-10 text-center font-glastone text-[56px] leading-[70px] lg:text-left">About the Author</h2>
                     <div className="grid gap-y-8">
                         <p>
                             Prophet Gbenga Shafe is the Senior Pastor of Harvest Word Assembly, Nigeria, and a seasoned prophetic voice with almost
