@@ -13,16 +13,16 @@ const Header = () => {
                     <nav className="hidden xl:block">
                         <ul className="flex gap-x-6">
                             <li>
-                                <Link to="/">The Book</Link>
+                                <a href="#the-book">The Book</a>
                             </li>
                             <li>
-                                <Link to="/">Enroll for Mentorship</Link>
+                                <a href="#enrol">Enroll for Mentorship</a>
                             </li>
                             <li>
-                                <Link to="/">Join Community</Link>
+                                <a href="#join-community">Join Community</a>
                             </li>
                             <li>
-                                <Link to="/">The Author</Link>
+                                <a href="#author">The Author</a>
                             </li>
                             <div className="cta |">
                                 <LinkButton to="/" className="px-8 py-4 text-alt" variant="primary">

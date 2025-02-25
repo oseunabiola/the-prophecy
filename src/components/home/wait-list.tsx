@@ -1,19 +1,13 @@
 import { ReactNode } from "react";
 import DreamImage from "../../assets/images/dream-track.jpeg";
-import seekerImage from "../../assets/images/seekers.png";
 import PropheticOfficeImage from "../../assets/images/prophetic-office.jpeg";
+import seekerImage from "../../assets/images/seekers.png";
 import { PageContainer } from "../shared/page-container";
 import { LinkButton } from "../ui/link-button";
 
-// const check = true;
-const check = false;
-
 const WaitList = () => {
-    if (check) {
-        return <div>Temp</div>;
-    }
     return (
-        <div className="bg-radial-[50%_50%_at_50%_50%] from-[#010836] to-[#01020F] py-[102px] text-alt-2">
+        <div id="enrol" className="bg-radial-[50%_50%_at_50%_50%] from-[#010836] to-[#01020F] py-[102px] text-alt-2">
             <PageContainer>
                 <div className="grid gap-y-[88px]">
                     <div className="mx-auto grid w-11/12 gap-y-8 text-center text-[28px]">
@@ -28,17 +22,17 @@ const WaitList = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="card-container | grid grid-cols-1 lg:grid-cols-3 lg:gap-x-6">
+                    <div className="card-container | grid grid-cols-1 gap-y-8 xl:grid-cols-3 xl:gap-x-6">
                         {WAIT_LIST_TRACKS.map((_track, index) => (
                             <WaitListCard key={index} track={_track} />
                         ))}
                     </div>
-                    <p className="mx-auto text-center text-[28px] lg:w-[60ch]">
+                    <p className="mx-auto text-center text-[28px] xl:w-[60ch]">
                         Choose your track and step into a new realm of prophetic clarity and confidence! Sign up now and take your prophetic journey
                         to the next level!
                     </p>
                     <div className="mx-auto grid w-max">
-                        <LinkButton to="/" variant="accent" className="px-30 py-6 text-[20px] text-black">
+                        <LinkButton to="/" variant="accent" className="px-30 py-4 text-[20px] text-black">
                             Enrol Now
                         </LinkButton>
                     </div>
