@@ -6,14 +6,16 @@ const Discover = () => {
     return (
         <div className="mx-auto bg-primary py-36">
             <PageContainer>
-                <div className="grid grid-cols-12 justify-between">
+                <div className="grid justify-between lg:grid-cols-12">
                     <div className="col-span-5 mx-auto w-11/12">
-                        <h2 className="mb-6 font-glastone text-5xl leading-[70px]">What You'll Discover in This Book :</h2>
-                        <LinkButton to="/" variant="primary" className="px-8 py-3.5">
-                            Order Now
-                        </LinkButton>
+                        <h2 className="mb-6 text-center font-glastone text-5xl leading-[70px]">What You'll Discover in This Book :</h2>
+                        <div className="grid lg:w-fit">
+                            <LinkButton to="/" variant="primary" className="px-8 py-3.5">
+                                Order Now
+                            </LinkButton>
+                        </div>
                     </div>
-                    <ul className="list-image col-span-7 mx-auto grid w-10/12 items-center gap-y-12 rounded-[8px] bg-body-bg px-11 py-20 text-xl">
+                    <ul className="list-image mx-auto grid items-center gap-y-12 rounded-[8px] bg-body-bg px-6 py-20 text-xl lg:col-span-7 lg:w-10/12 lg:px-11">
                         <li className="flex items-center gap-x-4">
                             <LuCircleCheckBig className="text-accent" /> How to activate and develop your prophetic gift
                         </li>

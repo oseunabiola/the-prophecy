@@ -5,12 +5,12 @@ import { LinkButton } from "../ui/link-button";
 const Hero = () => {
     return (
         <PageContainer>
-            <div className="flex py-40">
-                <div className="headline-section | grid gap-y-8 xl:w-7/12">
+            <div className="flex flex-col py-40">
+                <div className="headline-section | order-1 grid gap-y-8 xl:w-7/12">
                     <h1 className="headline | font-glastone leading-[74px] xl:w-[38ch] xl:text-[70px]">
                         Unlock the <span className="italic">Prophetic</span>. Hear God Clearly. Fulfil Your Divine Destiny.
                     </h1>
-                    <p className="w-[36ch] text-xl leading-8">
+                    <p className="text-xl leading-8 lg:w-[36ch]">
                         A Life-Changing Book by Prophet Gbenga Shafe, Senior Pastor, Harvest Word Assembly, Nigeria
                     </p>
                     <div className="grid w-max grid-flow-col justify-items-start xl:gap-6">

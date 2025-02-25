@@ -5,7 +5,13 @@ import PropheticOfficeImage from "../../assets/images/prophetic-office.jpeg";
 import { PageContainer } from "../shared/page-container";
 import { LinkButton } from "../ui/link-button";
 
+// const check = true;
+const check = false;
+
 const WaitList = () => {
+    if (check) {
+        return <div>Temp</div>;
+    }
     return (
         <div className="bg-radial-[50%_50%_at_50%_50%] from-[#010836] to-[#01020F] py-[102px] text-alt-2">
             <PageContainer>
@@ -22,12 +28,12 @@ const WaitList = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="card-container | grid grid-cols-3 gap-x-6">
+                    <div className="card-container | grid grid-cols-1 lg:grid-cols-3 lg:gap-x-6">
                         {WAIT_LIST_TRACKS.map((_track, index) => (
                             <WaitListCard key={index} track={_track} />
                         ))}
                     </div>
-                    <p className="mx-auto w-[60ch] text-center text-[28px]">
+                    <p className="mx-auto text-center text-[28px] lg:w-[60ch]">
                         Choose your track and step into a new realm of prophetic clarity and confidence! Sign up now and take your prophetic journey
                         to the next level!
                     </p>
