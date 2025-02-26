@@ -46,4 +46,36 @@ const LinkButton = ({ children, isExternal = false, to, className = "", variant 
     );
 };
 
-export { LinkButton };
+type ButtonProps = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> &
+    Omit<LinkButtonProps, "to" | "isExternal">;
+
+const Button = ({ variant, className, children, ...rest }: ButtonProps) => {
+    let internalClassNames;
+
+    const DEFAULT_CLASS_NAMES = "rounded-md text-center font-semibold";
+
+    switch (variant) {
+        case "primary":
+            internalClassNames = "bg-radial-[50%_50%_at_50%_50%] from-[#010836] to-[#01020F] text-alt";
+            break;
+        case "outline-primary":
+            internalClassNames = "border-[1px]";
+            break;
+        case "accent":
+            internalClassNames = "bg-accent";
+
+            break;
+
+        default:
+            internalClassNames = "px-6 py-2";
+            break;
+    }
+
+    return (
+        <button className={`${DEFAULT_CLASS_NAMES} ${className} ${internalClassNames}`} {...rest}>
+            {children}
+        </button>
+    );
+};
+
+export { Button, LinkButton };

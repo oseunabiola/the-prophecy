@@ -1,17 +1,49 @@
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { LinkButton } from "../ui/link-button";
+import { Button, LinkButton } from "../ui/link-button";
 import { PageContainer } from "./page-container";
 
 const Header = () => {
+    const [navIsOpen, setNavIsOpen] = useState(false);
+    const navNode = useRef<HTMLElement>(null);
+    const linkListNode = useRef<HTMLUListElement>(null);
+
+    const toggleNavView = () => {
+        if (navIsOpen) {
+            navNode.current?.classList.add("hidden");
+            navNode.current?.classList.remove("absolute");
+            linkListNode.current?.classList.remove("flex-col");
+            linkListNode.current?.classList.remove("py-8");
+            linkListNode.current?.classList.remove("pb-12");
+            linkListNode.current?.classList.remove("text-center");
+            setNavIsOpen(false);
+        } else {
+            navNode.current?.classList.remove("hidden");
+            navNode.current?.classList.add("absolute");
+            linkListNode.current?.classList.add("flex-col");
+            linkListNode.current?.classList.add("py-8");
+            linkListNode.current?.classList.add("pb-12");
+            linkListNode.current?.classList.add("text-center");
+            setNavIsOpen(true);
+        }
+    };
+
     return (
         <header>
             <PageContainer>
-                <div className="flex items-center justify-between bg-primary px-4 py-6 shadow-400 xl:px-5 xl:py-8">
+                <div className="relative flex items-center justify-between bg-primary px-4 py-6 shadow-400 xl:px-5 xl:py-8">
                     <Link to="/" className="text-xl font-semibold">
                         That all may Prophesy
                     </Link>
-                    <nav className="hidden xl:block">
-                        <ul className="flex gap-x-6">
+                    <nav className="inset-0 top-full hidden xl:block" ref={navNode}>
+                        <ul
+                            className="flex gap-6 bg-primary"
+                            ref={linkListNode}
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                // console.log(e.target);
+                            }}
+                        >
                             <li>
                                 <a href="#the-book">The Book</a>
                             </li>
@@ -31,9 +63,9 @@ const Header = () => {
                             </div>
                         </ul>
                     </nav>
-                    <button role="menu" className="xl:hidden">
+                    <Button onClick={toggleNavView} variant="outline-primary" role="menu" className="cursor-pointer px-6 py-2 xl:hidden">
                         Menu
-                    </button>
+                    </Button>
                 </div>
             </PageContainer>
         </header>
