@@ -91,9 +91,12 @@ const WaitListCard = ({ track }: { track: TrackProp }) => {
     const { decorColour, name, description } = track;
 
     return (
-        <div className="card | overflow-hidden rounded-sm border border-accent-3">
-            <div className="track-img | relative max-h-60 overflow-hidden">
-                <img src={track.image} className="scaleX-[-1]" />
+        <div className="card | grid overflow-hidden rounded-sm border border-accent-3">
+            <div
+                className={`track-img | relative h-[256px] overflow-hidden bg-cover bg-center bg-no-repeat`}
+                style={{ backgroundImage: `url(${track.image})` }}
+            >
+                {/* <img src={track.image} className="scaleX-[-1]" /> */}
                 <div className="backdrop | absolute inset-0 bg-linear-180 from-transparent to-[#000]">
                     <p className="absolute bottom-6 px-6 text-[28px] xl:px-9">{name}</p>
                 </div>

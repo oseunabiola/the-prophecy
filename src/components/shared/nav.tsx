@@ -32,7 +32,7 @@ const Header = () => {
         <header>
             <PageContainer>
                 <div className="relative flex items-center justify-between bg-primary px-4 py-6 shadow-400 xl:px-5 xl:py-8">
-                    <Link to="/" className="text-xl font-semibold">
+                    <Link to="/" className="text-lg font-semibold xl:text-xl">
                         That all may Prophesy
                     </Link>
                     <nav className="inset-0 top-full hidden xl:block" ref={navNode}>
@@ -41,7 +41,6 @@ const Header = () => {
                             ref={linkListNode}
                             onClick={(e) => {
                                 e.stopPropagation();
-                                // console.log(e.target);
                             }}
                         >
                             <li>
@@ -63,7 +62,7 @@ const Header = () => {
                             </div>
                         </ul>
                     </nav>
-                    <Button onClick={toggleNavView} variant="outline-primary" role="menu" className="cursor-pointer px-6 py-2 xl:hidden">
+                    <Button onClick={toggleNavView} variant="outline-primary" role="menu" className="cursor-pointer px-4 py-2 !text-xs xl:hidden">
                         Menu
                     </Button>
                 </div>

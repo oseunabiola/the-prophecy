@@ -19,7 +19,7 @@ const LinkButton = ({ children, isExternal = false, to, className = "", variant 
             internalClassNames = "bg-radial-[50%_50%_at_50%_50%] from-[#010836] to-[#01020F] text-alt";
             break;
         case "outline-primary":
-            internalClassNames = "border-[1px]";
+            internalClassNames = "border-[1.5px]";
             break;
         case "accent":
             internalClassNames = "bg-accent";
@@ -59,11 +59,10 @@ const Button = ({ variant, className, children, ...rest }: ButtonProps) => {
             internalClassNames = "bg-radial-[50%_50%_at_50%_50%] from-[#010836] to-[#01020F] text-alt";
             break;
         case "outline-primary":
-            internalClassNames = "border-[1px]";
+            internalClassNames = "border-[1.5px]";
             break;
         case "accent":
             internalClassNames = "bg-accent";
-
             break;
 
         default:
