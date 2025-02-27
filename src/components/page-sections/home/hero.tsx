@@ -1,6 +1,6 @@
-import heroIllustration from "../../assets/illustrations/hero-illustration.png";
-import { PageContainer } from "../shared/page-container";
-import { LinkButton } from "../ui/link-button";
+import heroIllustration from "../../../assets/illustrations/hero-illustration.png";
+import { PageContainer } from "../../shared/page-container";
+import { LinkButton } from "../../ui/link-button";
 
 const Hero = () => {
     return (
@@ -15,10 +15,10 @@ const Hero = () => {
                     </p>
                     {/* <div className="mx-auto grid w-10/12 xl:w-max xl:grid-flow-col xl:justify-items-start "> */}
                     <div className="grid gap-y-4 md:grid-flow-col md:gap-x-6 xl:w-max">
-                        <LinkButton to="/" variant="primary" className="px-8 py-3.5">
+                        <LinkButton to="/order" variant="primary" className="px-8 py-3.5">
                             Order Now
                         </LinkButton>
-                        <LinkButton to="/" variant="outline-primary" className="px-8 py-3.5">
+                        <LinkButton isExternal to="#brief" variant="outline-primary" className="px-8 py-3.5">
                             Learn More
                         </LinkButton>
                     </div>

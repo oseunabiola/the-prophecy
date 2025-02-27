@@ -1,8 +1,8 @@
-import { PageContainer } from "../shared/page-container";
+import { PageContainer } from "../../shared/page-container";
 
 const Benefit = () => {
     return (
-        <div className="mx-auto bg-primary py-32 text-center xl:py-32">
+        <div id="brief" className="mx-auto bg-primary py-32 text-center xl:py-32">
             <PageContainer>
                 <div className="mx-auto md:w-10/12">
                     <h2 className="mb-7 text-4xl xl:text-[40px]">What If You Could Hear God Clearly?</h2>

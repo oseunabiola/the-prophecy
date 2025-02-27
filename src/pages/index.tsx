@@ -1,30 +1,24 @@
-import { Benefit } from "../components/home/benefit";
-import { CommunityInvitation } from "../components/home/community-invitation";
-import { CTA } from "../components/home/cta";
-import { Discover } from "../components/home/Discover";
-import { Hero } from "../components/home/hero";
-import { TheAuthor } from "../components/home/the-author";
-import { TheBook } from "../components/home/the-book";
-import { WaitList } from "../components/home/wait-list";
-import { Footer } from "../components/shared/footer";
-import { Header } from "../components/shared/nav";
+import { Benefit } from "../components/page-sections/home/benefit";
+import { CommunityInvitation } from "../components/page-sections/home/community-invitation";
+import { CTA } from "../components/page-sections/home/cta";
+import { Discover } from "../components/page-sections/home/Discover";
+import { Hero } from "../components/page-sections/home/hero";
+import { TheAuthor } from "../components/page-sections/home/the-author";
+import { TheBook } from "../components/page-sections/home/the-book";
+import { WaitList } from "../components/page-sections/home/wait-list";
 
 const Home = () => {
     return (
-        <div className="grid-rows-[auto_1fr_auto] pt-7 xl:pt-14">
-            <Header />
-            <main>
-                <Hero />
-                <Benefit />
-                <TheBook />
-                <Discover />
-                <TheAuthor />
-                <CTA />
-                <WaitList />
-                <CommunityInvitation />
-            </main>
-            <Footer />
-        </div>
+        <>
+            <Hero />
+            <Benefit />
+            <TheBook />
+            <Discover />
+            <TheAuthor />
+            <CTA />
+            <WaitList />
+            <CommunityInvitation />
+        </>
     );
 };
 

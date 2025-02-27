@@ -9,7 +9,7 @@ const Footer = () => {
                     <h2 className="text-[40px] xl:leading-[57px]">Are You Ready to Step Into Your Prophetic Destiny?</h2>
                     <p className="font-recoleta text-2xl xl:text-[28px] xl:leading-9">Order Now & Be Among the First to Receive Your Copy!</p>
                     <div className="grid md:mx-auto md:w-6/12 xl:w-max">
-                        <LinkButton to="/" variant="accent" className="px-8 py-3.5 text-[#1E1E1E]">
+                        <LinkButton to="/order" variant="accent" className="px-8 py-3.5 text-[#1E1E1E]">
                             Order Now
                         </LinkButton>
                     </div>

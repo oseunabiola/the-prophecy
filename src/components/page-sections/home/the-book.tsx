@@ -1,6 +1,6 @@
-import AboutIllustration from "../../assets/illustrations/landing-about-illustration.png";
-import { PageContainer } from "../shared/page-container";
-import { LinkButton } from "../ui/link-button";
+import AboutIllustration from "../../../assets/illustrations/landing-about-illustration.png";
+import { PageContainer } from "../../shared/page-container";
+import { LinkButton } from "../../ui/link-button";
 
 const TheBook = () => {
     return (
@@ -23,7 +23,7 @@ const TheBook = () => {
                                 sharpen your gift, this book will equip you with the knowledge and confidence to step into the prophetic dimension.
                             </p>
                             <div className="grid md:mx-auto md:w-6/12 xl:mx-0 xl:w-max">
-                                <LinkButton to="/" variant="primary" className="!px-8 !py-3.5">
+                                <LinkButton to="/order" variant="primary" className="!px-8 !py-3.5">
                                     Order Now
                                 </LinkButton>
                             </div>

@@ -1,6 +1,6 @@
 import { LuCircleCheckBig } from "react-icons/lu";
-import { PageContainer } from "../shared/page-container";
-import { LinkButton } from "../ui/link-button";
+import { PageContainer } from "../../shared/page-container";
+import { LinkButton } from "../../ui/link-button";
 
 const Discover = () => {
     return (
@@ -12,7 +12,7 @@ const Discover = () => {
                             What You'll Discover in This Book:
                         </h2>
                         <div className="grid md:mx-auto md:w-8/12 xl:mx-0 xl:w-max">
-                            <LinkButton to="/" variant="primary" className="px-8 py-3.5">
+                            <LinkButton to="/order" variant="primary" className="px-8 py-3.5">
                                 Order Now
                             </LinkButton>
                         </div>

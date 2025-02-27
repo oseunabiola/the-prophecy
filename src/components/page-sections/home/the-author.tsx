@@ -1,5 +1,5 @@
-import AuthorImage from "../../assets/images/Dr-Prophet-Gbenga-Shafe.png";
-import { PageContainer } from "../shared/page-container";
+import AuthorImage from "../../../assets/images/Dr-Prophet-Gbenga-Shafe.png";
+import { PageContainer } from "../../shared/page-container";
 
 const TheAuthor = () => {
     return (

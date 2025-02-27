@@ -1,6 +1,6 @@
-import bookCoverIllustration from "../../assets/illustrations/book-cover-white-bg.png";
-import { PageContainer } from "../shared/page-container";
-import { LinkButton } from "../ui/link-button";
+import bookCoverIllustration from "../../../assets/illustrations/book-cover-white-bg.png";
+import { PageContainer } from "../../shared/page-container";
+import { LinkButton } from "../../ui/link-button";
 
 const CTA = () => {
     return (
@@ -18,7 +18,7 @@ const CTA = () => {
                             <p>Get Both: Best Value!</p>
                         </div>
                         <div className="grid md:mx-auto md:w-6/12 xl:mx-0 xl:w-max">
-                            <LinkButton to="/" className="px-8 py-4 text-black" variant="accent">
+                            <LinkButton to="/order" className="px-8 py-4 text-black" variant="accent">
                                 Order Now
                             </LinkButton>
                         </div>

@@ -56,7 +56,7 @@ const Header = () => {
                                 <a href="#author">The Author</a>
                             </li>
                             <div className="cta |">
-                                <LinkButton to="/" className="px-8 py-4 text-alt" variant="primary">
+                                <LinkButton to="/order" className="px-8 py-4 text-alt" variant="primary">
                                     Order Now
                                 </LinkButton>
                             </div>

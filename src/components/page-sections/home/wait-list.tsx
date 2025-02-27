@@ -1,9 +1,9 @@
 import { ReactNode } from "react";
-import DreamImage from "../../assets/images/dream-track.jpeg";
-import PropheticOfficeImage from "../../assets/images/prophetic-office.jpeg";
-import seekerImage from "../../assets/images/seekers.png";
-import { PageContainer } from "../shared/page-container";
-import { LinkButton } from "../ui/link-button";
+import DreamImage from "../../../assets/images/dream-track.jpeg";
+import PropheticOfficeImage from "../../../assets/images/prophetic-office.jpeg";
+import seekerImage from "../../../assets/images/seekers.png";
+import { PageContainer } from "../../shared/page-container";
+import { LinkButton } from "../../ui/link-button";
 
 const WaitList = () => {
     return (

@@ -1,6 +1,6 @@
 import { LuCircleCheckBig } from "react-icons/lu";
-import { PageContainer } from "../shared/page-container";
-import { LinkButton } from "../ui/link-button";
+import { PageContainer } from "../../shared/page-container";
+import { LinkButton } from "../../ui/link-button";
 
 const CommunityInvitation = () => {
     return (
