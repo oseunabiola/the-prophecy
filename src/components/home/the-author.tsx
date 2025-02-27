@@ -10,7 +10,7 @@ const TheAuthor = () => {
                         <h2 className="mb-4 text-center font-glastone text-[40px] xl:mb-10 xl:text-left xl:text-[56px] xl:leading-[70px]">
                             About the Author
                         </h2>
-                        <div className="grid gap-y-8">
+                        <div className="grid gap-y-8 md:mx-auto md:w-9/12 xl:w-full">
                             <p>
                                 Prophet Gbenga Shafe is the Senior Pastor of Harvest Word Assembly, Nigeria, and a seasoned prophetic voice with
                                 almost two decades of experience in the office of the prophet. A passionate teacher of God's Word, he carries a divine
@@ -23,8 +23,8 @@ const TheAuthor = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="mx-auto w-9/12 xl:col-span-5 xl:ms-auto xl:me-0">
-                        <img src={AuthorImage} alt="The author - Dr Prophet Gbenga Shafe" />
+                    <div className="mx-auto w-9/12 md:w-8/12 xl:col-span-5 xl:ms-auto xl:me-0 xl:w-10/12">
+                        <img src={AuthorImage} alt="The author - Dr Prophet Gbenga Shafe" className="mx-auto" />
                     </div>
                 </div>
             </PageContainer>

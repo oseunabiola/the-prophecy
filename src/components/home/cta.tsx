@@ -17,15 +17,15 @@ const CTA = () => {
                             <p>E-Book: Coming soon</p>
                             <p>Get Both: Best Value!</p>
                         </div>
-                        <div className="grid xl:w-max">
+                        <div className="grid md:mx-auto md:w-6/12 xl:mx-0 xl:w-max">
                             <LinkButton to="/" className="px-8 py-4 text-black" variant="accent">
                                 Order Now
                             </LinkButton>
                         </div>
                     </div>
-                    <div className="illustration | col-span-6 justify-self-end">
-                        <div className="mx-auto w-9/12 xl:ms-auto xl:me-0 xl:w-11/12">
-                            <img src={bookCoverIllustration} alt="That all may Prophecy book cover" />
+                    <div className="illustration | col-span-6 xl:justify-self-end">
+                        <div className="mx-auto w-9/12 md:w-8/12 xl:ms-auto xl:me-0 xl:w-11/12">
+                            <img src={bookCoverIllustration} alt="That all may Prophecy book cover" className="mx-auto" />
                         </div>
                     </div>
                 </div>

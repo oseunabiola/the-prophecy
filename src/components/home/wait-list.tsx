@@ -22,7 +22,7 @@ const WaitList = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="card-container | grid grid-cols-1 gap-y-8 xl:grid-cols-3 xl:gap-x-6">
+                    <div className="card-container | grid grid-cols-1 gap-y-8 md:grid-cols-2 md:gap-x-6 xl:grid-cols-3">
                         {WAIT_LIST_TRACKS.map((_track, index) => (
                             <WaitListCard key={index} track={_track} />
                         ))}
@@ -91,7 +91,7 @@ const WaitListCard = ({ track }: { track: TrackProp }) => {
     const { decorColour, name, description } = track;
 
     return (
-        <div className="card | grid overflow-hidden rounded-sm border border-accent-3">
+        <div className="card | overflow-hidden rounded-sm border border-accent-3">
             <div
                 className={`track-img | relative h-[256px] overflow-hidden bg-cover bg-center bg-no-repeat`}
                 style={{ backgroundImage: `url(${track.image})` }}
