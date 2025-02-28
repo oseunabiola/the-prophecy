@@ -9,6 +9,7 @@ type FormValuesType = { firstName: ""; lastName: ""; email: ""; location: ""; ph
 const OrderFormContainer = () => {
     const handleFormSubmit = async (values: FormValuesType, helper: FormikHelpers<FormValuesType>) => {
         try {
+            console.log(values);
             helper.setSubmitting(false);
         } catch (error) {
             console.log(error);
