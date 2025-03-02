@@ -25,14 +25,13 @@ const OrderFormContainer = () => {
     const handleFormSubmit = async (values: OrderFormType, helper: FormikHelpers<OrderFormType>) => {
         try {
             setSubmitError("");
-            const response = await axios.post(ORDER_ENDPOINT, values);
+            const response = await axios.post(ORDER_ENDPOINT, values, { headers: { "Content-Type": "application/json" } });
             console.log(response.data.data);
             setSuccessMessage(response.data.message);
             helper.resetForm();
             orderSuccessModal.onOpen();
         } catch (error) {
             setSubmitError(error instanceof AxiosError ? error.message : "Oops! Something went wrong");
-            console.log(error);
         }
     };
 
@@ -66,7 +65,7 @@ const OrderFormContainer = () => {
                                         className="cursor-pointer px-6 py-4 disabled:bg-gray-100"
                                         disabled={isSubmitting}
                                     >
-                                        Confirm Order
+                                        Register Order
                                     </Button>
 
                                     {submitError ? (
