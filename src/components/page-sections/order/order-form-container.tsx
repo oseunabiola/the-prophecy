@@ -1,5 +1,5 @@
 import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure, UseModalProps } from "@chakra-ui/react";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { Form, Formik, FormikHelpers } from "formik";
 import { ReactNode, useState } from "react";
 import { LiaCartPlusSolid } from "react-icons/lia";
@@ -18,6 +18,7 @@ const ORDER_ENDPOINT =
 
 const OrderFormContainer = () => {
     const [successMessage, setSuccessMessage] = useState("");
+    const [submitError, setSubmitError] = useState("");
 
     const orderSuccessModal = useDisclosure();
 
@@ -29,13 +30,13 @@ const OrderFormContainer = () => {
             helper.resetForm();
             orderSuccessModal.onOpen();
         } catch (error) {
+            setSubmitError(error instanceof AxiosError ? error.message : "Oops! Something went wrong");
             console.log(error);
         }
     };
 
     return (
         <div className="bg-primary py-32 xl:py-40">
-            {/* <OrderSuccessModal isOpen={orderSuccessModal.isOpen}  /> */}
             <OrderSuccessModal modal={orderSuccessModal} successMessage={successMessage} onCloseCallback={() => setSuccessMessage("")} />
             <PageContainer>
                 <div className="mx-auto grid gap-y-12 md:w-9/12 xl:w-10/12">
@@ -61,6 +62,10 @@ const OrderFormContainer = () => {
                                     <Button variant="primary" type="submit" className="px-6 py-4 disabled:bg-gray-100" disabled={isSubmitting}>
                                         Confirm Order
                                     </Button>
+
+                                    {submitError ? (
+                                        <p className="rounded border-[0.1px] bg-red-200 px-2 py-1 text-center text-lg text-red-500">{submitError}</p>
+                                    ) : null}
                                 </div>
                             </Form>
                         )}
