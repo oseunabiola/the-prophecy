@@ -24,6 +24,7 @@ const OrderFormContainer = () => {
 
     const handleFormSubmit = async (values: OrderFormType, helper: FormikHelpers<OrderFormType>) => {
         try {
+            setSubmitError("");
             const response = await axios.post(ORDER_ENDPOINT, values);
             console.log(response.data.data);
             setSuccessMessage(response.data.message);
@@ -59,7 +60,12 @@ const OrderFormContainer = () => {
                                         </TwoColumnFields>
                                         <CustomInputField name="phoneNo" type="tel" label="phone" placeholder="Enter your phone number" />
                                     </div>
-                                    <Button variant="primary" type="submit" className="px-6 py-4 disabled:bg-gray-100" disabled={isSubmitting}>
+                                    <Button
+                                        variant="primary"
+                                        type="submit"
+                                        className="cursor-pointer px-6 py-4 disabled:bg-gray-100"
+                                        disabled={isSubmitting}
+                                    >
                                         Confirm Order
                                     </Button>
 
@@ -108,7 +114,7 @@ const OrderSuccessModal = ({
                 <ModalBody className="my-8 grid gap-y-2 text-center">
                     <LiaCartPlusSolid className="mx-auto text-7xl text-green-800" />
 
-                    <p className="text-xl font-bold">{successMessage}</p>
+                    <p className="text-xl font-medium">{successMessage}</p>
                     <p>{MODAL_MESSAGE}</p>
                 </ModalBody>
 
