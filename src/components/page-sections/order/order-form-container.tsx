@@ -1,12 +1,12 @@
-import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure, UseModalProps } from "@chakra-ui/react";
+import { useDisclosure } from "@chakra-ui/react";
 import axios, { AxiosError } from "axios";
 import { Form, Formik, FormikHelpers } from "formik";
 import { ReactNode, useState } from "react";
-import { LiaCartPlusSolid } from "react-icons/lia";
 import { orderFormValidation } from "../../../utils/order-form-validation";
 import { PageContainer } from "../../shared/page-container";
 import { CustomInputField } from "../../ui/custom-input-field";
 import { Button } from "../../ui/link-button";
+import { OrderSuccessModal } from "./success-modal";
 
 const FORM_INIT_VALUES = { firstName: "", lastName: "", email: "", location: "", phoneNo: "" } as OrderFormType;
 type OrderFormType = { firstName: string; lastName: string; email: string; location: string; phoneNo: string };
@@ -17,8 +17,9 @@ const ORDER_ENDPOINT =
     process.env.NODE_ENV === "development" ? "http://localhost:3001/v1/order-the-prophetic" : "https://api.theharvestword.org/v1/order-the-prophetic";
 
 const OrderFormContainer = () => {
-    const [successMessage, setSuccessMessage] = useState("");
+    const [successMessage, setSuccessMessage] = useState("Successful");
     const [submitError, setSubmitError] = useState("");
+    const [orderId, setOrderId] = useState("");
 
     const orderSuccessModal = useDisclosure();
 
@@ -29,15 +30,22 @@ const OrderFormContainer = () => {
             console.log(response.data.data);
             setSuccessMessage(response.data.message);
             helper.resetForm();
+            setOrderId(response.data.data.orderId);
             orderSuccessModal.onOpen();
         } catch (error) {
-            setSubmitError(error instanceof AxiosError ? error.message : "Oops! Something went wrong");
+            console.log("🚀 ~ handleFormSubmit ~ error:", error);
+            setSubmitError(error instanceof AxiosError ? error.response?.data.message : "Oops! Something went wrong");
         }
     };
 
     return (
         <div className="bg-primary py-32 xl:py-40">
-            <OrderSuccessModal modal={orderSuccessModal} successMessage={successMessage} onCloseCallback={() => setSuccessMessage("")} />
+            <OrderSuccessModal
+                modal={orderSuccessModal}
+                successMessage={successMessage}
+                onCloseCallback={() => setSuccessMessage("")}
+                orderId={orderId}
+            />
             <PageContainer>
                 <div className="mx-auto grid gap-y-12 md:w-9/12 xl:w-10/12">
                     <header className="text-center xl:text-left">
@@ -74,7 +82,7 @@ const OrderFormContainer = () => {
                                     </Button>
 
                                     {submitError ? (
-                                        <p className="rounded border-[0.1px] bg-red-200 px-2 py-1 text-center text-lg text-red-500">{submitError}</p>
+                                        <p className="rounded border-[0.1px] bg-red-50 px-2 py-1 text-center text-lg text-red-500">{submitError}</p>
                                     ) : null}
                                 </div>
                             </Form>
@@ -90,46 +98,4 @@ export { OrderFormContainer };
 
 const TwoColumnFields = ({ children }: { children: ReactNode }) => {
     return <div className="grid items-start gap-x-[34px] gap-y-6 md:grid-cols-2 xl:gap-y-8">{children}</div>;
-};
-
-const OrderSuccessModal = ({
-    modal,
-    successMessage,
-    onCloseCallback,
-}: {
-    modal: UseModalProps;
-    successMessage: string;
-    onCloseCallback: () => void;
-}) => {
-    const MODAL_MESSAGE = "Thanks you for registering your intention. Your request is being processed.";
-    return (
-        <Modal
-            isOpen={modal.isOpen}
-            onClose={() => {
-                onCloseCallback();
-                modal.onClose();
-            }}
-            closeOnEsc
-            isCentered
-        >
-            <ModalOverlay />
-            <ModalContent className="mx-4 !rounded-2xl p-4">
-                <ModalHeader>Order Request Submitted</ModalHeader>
-                <ModalBody className="my-8 grid gap-y-2 text-center">
-                    <LiaCartPlusSolid className="mx-auto text-7xl text-green-800" />
-
-                    <p className="text-xl font-medium">{successMessage}</p>
-                    <p>{MODAL_MESSAGE}</p>
-                </ModalBody>
-
-                <ModalFooter>
-                    <div className="flex justify-center gap-2">
-                        <Button variant="primary" onClick={modal.onClose} className="cursor-pointer px-10 py-3">
-                            Ok
-                        </Button>
-                    </div>
-                </ModalFooter>
-            </ModalContent>
-        </Modal>
-    );
 };
