@@ -45,7 +45,7 @@ const OrderFormContainer = () => {
                         <p className="text-xl">Ensure you fill in the correct details as required</p>
                     </header>
                     <Formik initialValues={FORM_INIT_VALUES} validationSchema={orderFormValidation} onSubmit={handleFormSubmit}>
-                        {({ isSubmitting }) => (
+                        {({ isSubmitting, setFieldValue }) => (
                             <Form className="form |">
                                 <div className="grid gap-y-8 bg-alt-2 px-6 py-10 xl:gap-y-12 xl:px-12 xl:py-20">
                                     <div className="grid gap-y-6 xl:gap-y-12">
@@ -55,7 +55,12 @@ const OrderFormContainer = () => {
                                         </TwoColumnFields>
                                         <TwoColumnFields>
                                             <CustomInputField name="email" type="email" label="Email*" placeholder="Enter your email address" />
-                                            <CustomInputField name="location" label="City, Country" placeholder="Lagos,Nigeria" />
+                                            <CustomInputField
+                                                name="location"
+                                                label="City, Country"
+                                                placeholder="Lagos,Nigeria"
+                                                onChange={(e) => setFieldValue("location", e.target.value.replace(" ", ""))}
+                                            />
                                         </TwoColumnFields>
                                         <CustomInputField name="phoneNo" type="tel" label="phone" placeholder="Enter your phone number" />
                                     </div>
