@@ -8,8 +8,8 @@ import { CustomInputField } from "../../ui/custom-input-field";
 import { Button } from "../../ui/link-button";
 import { OrderSuccessModal } from "./success-modal";
 
-const FORM_INIT_VALUES = { firstName: "", lastName: "", email: "", location: "", phoneNo: "" } as OrderFormType;
-type OrderFormType = { firstName: string; lastName: string; email: string; location: string; phoneNo: string };
+const FORM_INIT_VALUES = { firstName: "", lastName: "", email: "", city: "", country: "", phoneNo: "" } as OrderFormType;
+type OrderFormType = { firstName: string; lastName: string; email: string; city: string; country: string; phoneNo: string };
 
 export type { OrderFormType };
 
@@ -33,7 +33,6 @@ const OrderFormContainer = () => {
             setOrderId(response.data.data.orderId);
             orderSuccessModal.onOpen();
         } catch (error) {
-            console.log("🚀 ~ handleFormSubmit ~ error:", error);
             setSubmitError(error instanceof AxiosError ? error.response?.data.message : "Oops! Something went wrong");
         }
     };
@@ -53,7 +52,7 @@ const OrderFormContainer = () => {
                         <p className="text-xl">Ensure you fill in the correct details as required</p>
                     </header>
                     <Formik initialValues={FORM_INIT_VALUES} validationSchema={orderFormValidation} onSubmit={handleFormSubmit}>
-                        {({ isSubmitting, setFieldValue }) => (
+                        {({ isSubmitting }) => (
                             <Form className="form |">
                                 <div className="grid gap-y-8 bg-alt-2 px-6 py-10 xl:gap-y-12 xl:px-12 xl:py-20">
                                     <div className="grid gap-y-6 xl:gap-y-12">
@@ -63,14 +62,12 @@ const OrderFormContainer = () => {
                                         </TwoColumnFields>
                                         <TwoColumnFields>
                                             <CustomInputField name="email" type="email" label="Email*" placeholder="Enter your email address" />
-                                            <CustomInputField
-                                                name="location"
-                                                label="City, Country"
-                                                placeholder="Lagos,Nigeria"
-                                                onChange={(e) => setFieldValue("location", e.target.value.replace(" ", ""))}
-                                            />
+                                            <CustomInputField name="city" label="City" placeholder="Lagos" />
                                         </TwoColumnFields>
-                                        <CustomInputField name="phoneNo" type="tel" label="phone" placeholder="Enter your phone number" />
+                                        <TwoColumnFields>
+                                            <CustomInputField name="country" label="Country" placeholder="Nigeria" />
+                                            <CustomInputField name="phoneNo" type="tel" label="phone" placeholder="Enter your phone number" />
+                                        </TwoColumnFields>
                                     </div>
                                     <Button
                                         variant="primary"
@@ -78,7 +75,7 @@ const OrderFormContainer = () => {
                                         className="cursor-pointer px-6 py-4 disabled:bg-gray-100"
                                         disabled={isSubmitting}
                                     >
-                                        Register Order
+                                        {isSubmitting ? <span className="text-4xl leading-0">...</span> : "Register Order"}
                                     </Button>
 
                                     {submitError ? (

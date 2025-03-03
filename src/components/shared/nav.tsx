@@ -44,16 +44,16 @@ const Header = () => {
                             }}
                         >
                             <li>
-                                <a href="#the-book">The Book</a>
+                                <a href="/#the-book">The Book</a>
                             </li>
                             <li>
-                                <a href="#enrol">Enroll for Mentorship</a>
+                                <a href="/`#enrol">Enroll for Mentorship</a>
                             </li>
                             <li>
-                                <a href="#join-community">Join Community</a>
+                                <a href="/#join-community">Join Community</a>
                             </li>
                             <li>
-                                <a href="#author">The Author</a>
+                                <a href="/#author">The Author</a>
                             </li>
                             <div className="cta |">
                                 <LinkButton to="/order" className="px-8 py-4 text-alt" variant="primary">

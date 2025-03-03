@@ -9,7 +9,8 @@ const errorMessages = {
     lastNameAlphabets: "The last name provided contains characters that are now allowed. Only alphabets, space and hyphen are allowed",
     emailAddressRequired: "Email address is required.",
     emailAddress: "The email address provided is invalid. Kindly provide a valid email address.",
-    location: "The location provided is not allowed. Location should be your state and country, separated by a comma.",
+    city: "Kindly provide the city you're ordering from.",
+    country: "Kindly provide the country you're ordering from.",
     phoneNumber: "Invalid phone number provided.",
 };
 
@@ -27,9 +28,8 @@ const orderFormValidation = Yup.object().shape({
         .matches(/^[a-zA-Z\s-]+$/, errorMessages.lastNameAlphabets)
         .required(errorMessages.lastNameRequired),
     email: Yup.string().trim().email(errorMessages.emailAddress).required(errorMessages.emailAddressRequired),
-    location: Yup.string()
-        .trim()
-        .matches(/^[a-zA-Z]+,[a-zA-Z]+$/, errorMessages.location),
+    city: Yup.string().trim().max(50).required(errorMessages.city),
+    country: Yup.string().trim().max(50).required(errorMessages.country),
     phoneNo: Yup.string()
         .trim()
         .matches(/^\d{5,}$/, errorMessages.phoneNumber),
