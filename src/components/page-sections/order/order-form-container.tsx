@@ -55,6 +55,10 @@ const OrderFormContainer = () => {
                         {({ isSubmitting }) => (
                             <Form className="form |">
                                 <div className="grid gap-y-8 bg-alt-2 px-6 py-10 xl:gap-y-12 xl:px-12 xl:py-20">
+                                    <p className="bg-primary p-3 px-5 text-center text-xl md:text-right">
+                                        <span className="font-semibold">NGN 15,000</span>
+                                        /Copy
+                                    </p>
                                     <div className="grid gap-y-6 xl:gap-y-12">
                                         <TwoColumnFields>
                                             <CustomInputField name="firstName" label="First Name*" placeholder="Enter your first name" />
@@ -77,7 +81,6 @@ const OrderFormContainer = () => {
                                     >
                                         {isSubmitting ? <span className="text-4xl leading-0">...</span> : "Register Order"}
                                     </Button>
-
                                     {submitError ? (
                                         <p className="rounded border-[0.1px] bg-red-50 px-2 py-1 text-center text-lg text-red-500">{submitError}</p>
                                     ) : null}

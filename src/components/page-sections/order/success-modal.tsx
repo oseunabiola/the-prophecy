@@ -1,4 +1,4 @@
-import { Modal, ModalBody, ModalContent, ModalHeader, ModalOverlay, UseModalProps } from "@chakra-ui/react";
+import { Modal, ModalBody, ModalContent, ModalHeader, ModalOverlay, UseModalProps, useToast } from "@chakra-ui/react";
 import { IoCheckmarkCircleSharp, IoCopyOutline } from "react-icons/io5";
 import { Button } from "../../ui/link-button";
 
@@ -7,6 +7,7 @@ const PAYMENT_DETAILS = {
     "Account Name:": "Shafe Gbenga Solomon",
     "Bank Name:": "Providus Bank",
     "Payment Description:": "TAMP Book",
+    "Price:": "#15,000",
 };
 
 type ModalProps = {
@@ -17,9 +18,12 @@ type ModalProps = {
 };
 
 const OrderSuccessModal = ({ modal, successMessage, onCloseCallback }: ModalProps) => {
+    const toast = useToast();
+
     return (
         <Modal
             isOpen={modal.isOpen}
+            // isOpen={true}
             onClose={() => {
                 onCloseCallback();
                 modal.onClose();
@@ -35,7 +39,10 @@ const OrderSuccessModal = ({ modal, successMessage, onCloseCallback }: ModalProp
 
                     <p className="text-3xl font-medium">{successMessage}</p>
                     <div className="grid gap-y-6">
-                        <p>Thanks you for registering your intention. To confirm your order, kindly make payment into the account below:</p>
+                        <p>
+                            Thank you for registering your intention. Further details will be sent to your email. To confirm your order, kindly make
+                            payment into the account below:
+                        </p>
                         <div className="text-left">
                             {(Object.keys(PAYMENT_DETAILS) as (keyof typeof PAYMENT_DETAILS)[]).map((_paymentField) => {
                                 // if (_paymentField === "Payment Description:" && orderId)
@@ -49,7 +56,10 @@ const OrderSuccessModal = ({ modal, successMessage, onCloseCallback }: ModalProp
                                         {["Account Number:", "Payment Description:"].includes(_paymentField) ? (
                                             <button
                                                 className="ms-2 cursor-pointer text-gray-400"
-                                                onClick={() => navigator.clipboard.writeText(PAYMENT_DETAILS[_paymentField])}
+                                                onClick={() => {
+                                                    navigator.clipboard.writeText(PAYMENT_DETAILS[_paymentField]);
+                                                    toast({ description: "Copied to clipboard", status: "info" });
+                                                }}
                                             >
                                                 <IoCopyOutline />
                                             </button>
