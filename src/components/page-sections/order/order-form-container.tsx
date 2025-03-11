@@ -8,8 +8,26 @@ import { CustomInputField } from "../../ui/custom-input-field";
 import { Button } from "../../ui/link-button";
 import { OrderSuccessModal } from "./success-modal";
 
-const FORM_INIT_VALUES = { firstName: "", lastName: "", email: "", city: "", country: "", phoneNo: "" } as OrderFormType;
-type OrderFormType = { firstName: string; lastName: string; email: string; city: string; country: string; phoneNo: string };
+const FORM_INIT_VALUES = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    city: "",
+    country: "",
+    phoneNo: "",
+    copies: 1,
+    deliveryAddress: "",
+} as OrderFormType;
+type OrderFormType = {
+    firstName: string;
+    lastName: string;
+    email: string;
+    city: string;
+    country: string;
+    phoneNo: string;
+    copies: number;
+    deliveryAddress: string;
+};
 
 export type { OrderFormType };
 
@@ -70,7 +88,15 @@ const OrderFormContainer = () => {
                                         </TwoColumnFields>
                                         <TwoColumnFields>
                                             <CustomInputField name="country" label="Country" placeholder="Nigeria" />
-                                            <CustomInputField name="phoneNo" type="tel" label="phone" placeholder="Enter your phone number" />
+                                            <CustomInputField name="phoneNo" type="tel" label="Phone" placeholder="Enter your phone number" />
+                                        </TwoColumnFields>
+                                        <TwoColumnFields>
+                                            <CustomInputField name="copies" type="number" label="How many copies?" placeholder="1" min={1} />
+                                            <CustomInputField
+                                                name="deliveryAddress"
+                                                label="Delivery Address*"
+                                                placeholder="Enter the delivery address"
+                                            />
                                         </TwoColumnFields>
                                     </div>
                                     <Button

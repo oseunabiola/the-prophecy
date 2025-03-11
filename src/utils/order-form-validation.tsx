@@ -12,6 +12,8 @@ const errorMessages = {
     city: "Kindly provide the city you're ordering from.",
     country: "Kindly provide the country you're ordering from.",
     phoneNumber: "Invalid phone number provided.",
+    deliveryAddress: "The delivery address provided is not allowed. Only 10-70 characters are allowed for delivery address.",
+    copies: "The number of copies provided is not allowed. Minimum order is one (1).",
 };
 
 const orderFormValidation = Yup.object().shape({
@@ -33,6 +35,8 @@ const orderFormValidation = Yup.object().shape({
     phoneNo: Yup.string()
         .trim()
         .matches(/^\d{5,}$/, errorMessages.phoneNumber),
+    copies: Yup.number().min(0, errorMessages.copies),
+    deliveryAddress: Yup.string().min(10, errorMessages.deliveryAddress).max(70, errorMessages.deliveryAddress),
 });
 
 export { orderFormValidation };
